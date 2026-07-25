@@ -1,0 +1,34 @@
+import { auth } from "./firebase.js";
+
+import {
+  signOut
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+
+const logoutBtn =
+  document.getElementById("logoutBtn");
+
+if(logoutBtn){
+
+  logoutBtn.addEventListener(
+    "click",
+    async (e) => {
+
+      e.preventDefault();
+
+      try {
+
+        await signOut(auth);
+
+        window.location.href =
+          "login.html";
+
+      } catch(error) {
+
+        alert(error.message);
+
+      }
+
+    }
+  );
+
+}
