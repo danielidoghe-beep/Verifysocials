@@ -193,3 +193,23 @@ body{
   }
 
 }
+.hero-right{
+  flex:1;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  align-content:center;
+}
+
+.floating-card{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  border:1px solid #e5e7eb;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.floating-card:first-child{
+  grid-column:1 / 3;
+}
