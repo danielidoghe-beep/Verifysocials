@@ -1,131 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - VerifySocials</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - VerifySocials</title>
+
+<link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
 
-  <!-- Top Navigation -->
-  <header class="dashboard-header">
+<!-- Sidebar Overlay -->
+<div class="overlay" id="overlay"></div>
 
-    <div class="menu-btn">
-      ☰
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+        <h2>VerifySocials</h2>
+        <button id="closeMenu">✕</button>
     </div>
 
-    <div class="dashboard-logo">
-      VerifySocials
+    <a href="dashboard.html">🏠 Dashboard</a>
+    <a href="wallet.html">💰 Wallet</a>
+    <a href="transactions.html">📄 Transactions</a>
+    <a href="orders.html">📦 Orders</a>
+    <a href="notifications.html">🔔 Notifications</a>
+    <a href="numbers.html">📱 Buy Numbers</a>
+    <a href="sms.html">💬 SMS Services</a>
+    <a href="boosting.html">🚀 Social Boosting</a>
+    <a href="tools.html">🛠 Tools Store</a>
+    <a href="vpn.html">🌐 VPN</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="#">📞 Support</a>
+    <a href="#">🚪 Logout</a>
+
+</div>
+
+<!-- Top Bar -->
+<header class="topbar">
+
+    <button class="menu-btn" id="openMenu">
+        ☰
+    </button>
+
+    <div class="logo">
+        VerifySocials
     </div>
 
-    <div class="header-right">
-
-      <div class="notification-icon">
-        🔔
-        <span class="notification-badge">3</span>
-      </div>
-
-      <div class="profile-avatar">
-        👤
-      </div>
-
+    <div class="top-icons">
+        <span>🔔</span>
+        <span>👤</span>
     </div>
 
-  </header>
+</header>
 
-  <!-- Dashboard Layout -->
-  <div class="dashboard-layout">
+<!-- Main Content -->
+<div class="container">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
+    <div class="welcome-card">
+        <h1>Good Evening 👋</h1>
+        <p>Welcome to VerifySocials</p>
+    </div>
 
-      <a href="#">🏠 Dashboard</a>
-      <a href="#">💰 Wallet</a>
-      <a href="#">📦 Orders</a>
-      <a href="#">🔔 Notifications</a>
-      <a href="#">📱 Buy Numbers</a>
-      <a href="#">💬 SMS Services</a>
-      <a href="#">🚀 Social Boosting</a>
-      <a href="#">🛠 Tools Store</a>
-      <a href="#">🌐 VPN</a>
-      <a href="#">👤 Profile</a>
-      <a href="#">🚪 Logout</a>
+    <div class="search-box">
+        <input type="text" placeholder="Search services, tools, VPN...">
+    </div>
 
-    </aside>
-
-    <!-- Main Content -->
-    <main class="dashboard-content">
-
-      <h1>Welcome Back 👋</h1>
-
-      <!-- Wallet Card -->
-      <div class="wallet-card">
-
-        <p>Wallet Balance</p>
-
+    <div class="wallet-card">
+        <h3>Wallet Balance</h3>
         <h2>₦0.00</h2>
+        <button>Fund Wallet</button>
+    </div>
 
-        <button class="fund-btn">
-          Fund Wallet
-        </button>
+    <h2 class="section-title">Quick Actions</h2>
 
-      </div>
+    <div class="quick-actions">
 
-      <!-- Quick Actions -->
-      <div class="quick-grid">
-
-        <div class="quick-card">
-          📱
-          <h3>Buy Numbers</h3>
+        <div class="action-card">
+            📱
+            <p>Numbers</p>
         </div>
 
-        <div class="quick-card">
-          💬
-          <h3>SMS Services</h3>
+        <div class="action-card">
+            💬
+            <p>SMS</p>
         </div>
 
-        <div class="quick-card">
-          🚀
-          <h3>Boosting</h3>
+        <div class="action-card">
+            🚀
+            <p>Boosting</p>
         </div>
 
-        <div class="quick-card">
-          🛠
-          <h3>Tools Store</h3>
+        <div class="action-card">
+            🛠
+            <p>Tools</p>
         </div>
 
-      </div>
-
-      <!-- Recent Notifications -->
-      <div class="dashboard-section">
-
-        <h2>Recent Notifications</h2>
-
-        <div class="notification-item">
-          ✅ Welcome to VerifySocials
+        <div class="action-card">
+            🌐
+            <p>VPN</p>
         </div>
 
-        <div class="notification-item">
-          🔔 New products available
-        </div>
+    </div>
 
-      </div>
+    <div class="info-card">
+        <h3>Recent Orders</h3>
+        <p>No orders yet.</p>
+    </div>
 
-      <!-- Recent Orders -->
-      <div class="dashboard-section">
+    <div class="info-card">
+        <h3>Recent Notifications</h3>
+        <p>No notifications yet.</p>
+    </div>
 
-        <h2>Recent Orders</h2>
+</div>
 
-        <div class="order-item">
-          No orders yet
-        </div>
-
-      </div>
-
-    </main>
-
-  </div>
+<script src="dashboard.js"></script>
 
 </body>
 </html>
