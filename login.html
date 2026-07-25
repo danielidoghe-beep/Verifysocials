@@ -15,35 +15,39 @@
 
       <p>Login to your VerifySocials account</p>
 
-      <form>
+      <form id="loginForm">
 
-        <input
-          type="email"
-          placeholder="Email Address"
-          required
-        >
+  <input
+    type="email"
+    id="email"
+    placeholder="Email Address"
+    required
+  >
 
-        <input
-          type="password"
-          placeholder="Password"
-          required
-        >
-<div class="forgot-password">
-  <a href="forgot-password.html">
-    Forgot Password?
-  </a>
+  <input
+    type="password"
+    id="password"
+    placeholder="Password"
+    required
+  >
+
+  <div class="forgot-password">
+    <a href="forgot-password.html">
+      Forgot Password?
+    </a>
+  </div>
+
+  <button type="submit">
+    Login
+  </button>
+
+</form>
+
+<div class="google-login">
+  <button type="button" id="googleLoginBtn">
+    Continue with Google
+  </button>
 </div>
-        <button type="submit">
-          Login
-        </button>
-
-      </form>
-
-      <div class="google-login">
-        <button type="button">
-          Continue with Google
-        </button>
-      </div>
 
       <p>
         Don't have an account?
@@ -53,6 +57,66 @@
     </div>
 
   </div>
+<script type="module">
 
+import { auth } from "./firebase.js";
+
+import {
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", async (e) => {
+
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  try {
+
+    await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+
+    window.location.href = "dashboard.html";
+
+  } catch(error) {
+
+    alert(error.message);
+
+  }
+
+});
+
+const googleProvider = new GoogleAuthProvider();
+
+document
+.getElementById("googleLoginBtn")
+.addEventListener("click", async () => {
+
+  try {
+
+    await signInWithPopup(
+      auth,
+      googleProvider
+    );
+
+    window.location.href = "dashboard.html";
+
+  } catch(error) {
+
+    alert(error.message);
+
+  }
+
+});
+
+</script>
 </body>
 </html>
