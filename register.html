@@ -16,43 +16,47 @@
 
       <p>Join VerifySocials today.</p>
 
-      <form>
+      <form id="registerForm">
 
-        <input
-          type="text"
-          placeholder="Full Name"
-          required
-        >
+  <input
+    type="text"
+    id="fullName"
+    placeholder="Full Name"
+    required
+  >
 
-        <input
-          type="email"
-          placeholder="Email Address"
-          required
-        >
+  <input
+    type="email"
+    id="email"
+    placeholder="Email Address"
+    required
+  >
 
-        <input
-          type="password"
-          placeholder="Password"
-          required
-        >
+  <input
+    type="password"
+    id="password"
+    placeholder="Password"
+    required
+  >
 
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          required
-        >
+  <input
+    type="password"
+    id="confirmPassword"
+    placeholder="Confirm Password"
+    required
+  >
 
-        <button type="submit">
-          Create Account
-        </button>
+  <button type="submit">
+    Create Account
+  </button>
 
-      </form>
+</form>
 
-      <div class="google-login">
-        <button type="button">
-          Sign Up with Google
-        </button>
-      </div>
+<div class="google-login">
+  <button type="button" id="googleSignupBtn">
+    Sign Up with Google
+  </button>
+</div>
 
       <p>
         Already have an account?
@@ -62,6 +66,115 @@
     </div>
 
   </div>
+<script type="module">
 
+import { auth, db } from "./firebase.js";
+
+import {
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+  updateProfile
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+
+import {
+  doc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+const registerForm = document.getElementById("registerForm");
+
+registerForm.addEventListener("submit", async (e) => {
+
+  e.preventDefault();
+
+  const fullName =
+    document.getElementById("fullName").value;
+
+  const email =
+    document.getElementById("email").value;
+
+  const password =
+    document.getElementById("password").value;
+
+  const confirmPassword =
+    document.getElementById("confirmPassword").value;
+
+  if(password !== confirmPassword){
+    alert("Passwords do not match");
+    return;
+  }
+
+  try {
+
+    const userCredential =
+      await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+    await updateProfile(
+      userCredential.user,
+      {
+        displayName: fullName
+      }
+    );
+
+    await setDoc(
+      doc(db, "users", userCredential.user.uid),
+      {
+        fullName: fullName,
+        email: email,
+        walletBalance: 0,
+        createdAt: new Date()
+      }
+    );
+
+    window.location.href = "dashboard.html";
+
+  } catch(error) {
+
+    alert(error.message);
+
+  }
+
+});
+
+const provider = new GoogleAuthProvider();
+
+document
+.getElementById("googleSignupBtn")
+.addEventListener("click", async () => {
+
+  try {
+
+    const result =
+      await signInWithPopup(auth, provider);
+
+    await setDoc(
+      doc(db, "users", result.user.uid),
+      {
+        fullName:
+          result.user.displayName || "",
+        email:
+          result.user.email || "",
+        walletBalance: 0,
+        createdAt: new Date()
+      },
+      { merge: true }
+    );
+
+    window.location.href = "dashboard.html";
+
+  } catch(error) {
+
+    alert(error.message);
+
+  }
+
+});
+
+</script>
 </body>
 </html>
