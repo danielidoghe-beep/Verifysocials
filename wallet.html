@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Wallet | Verifystacklogs</title>
+
+<link rel="stylesheet" href="wallet.css">
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="wallet-page">
+
+<!-- HEADER -->
+
+<header class="wallet-header">
+
+    <h2 class="logo">
+
+        Verifystacklogs
+
+    </h2>
+
+    <div class="header-actions">
+
+        <button id="notificationBtn">
+
+            <i class="ri-notification-3-line"></i>
+
+        </button>
+
+        <button id="menuBtn">
+
+            <i class="ri-menu-3-line"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+<!-- PAGE TITLE -->
+
+<section class="wallet-title">
+
+    <div class="wallet-icon">
+
+        <i class="ri-wallet-3-line"></i>
+
+    </div>
+
+    <div>
+
+        <h1>
+
+            My Wallet
+
+        </h1>
+
+        <p>
+
+            Manage your wallet securely with clean funding and transaction tracking.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- WALLET TABS -->
+
+<div class="wallet-tabs">
+
+    <button class="tab active">
+
+        Wallet
+
+    </button>
+
+    <button class="tab">
+
+        Fund
+
+    </button>
+
+    <button class="tab">
+
+        History
+
+    </button>
+
+</div>
+<!-- ==========================
+WALLET BALANCE CARD
+=========================== -->
+
+<section class="wallet-balance-card">
+
+    <div class="wallet-top">
+
+        <div class="wallet-info">
+
+            <i class="ri-wallet-3-line"></i>
+
+            <div>
+
+                <h3>Wallet Balance</h3>
+
+                <p>
+
+                    NGN • <span id="lastUpdated">Updated just now</span>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="wallet-actions">
+
+            <button id="toggleBalance">
+
+                <i class="ri-eye-line"></i>
+
+            </button>
+
+            <button id="refreshBalance">
+
+                <i class="ri-refresh-line"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <h1 class="wallet-balance">
+
+        ₦<span id="walletBalance">
+
+            0.00
+
+        </span>
+
+    </h1>
+
+    <a href="fund.html" class="add-funds-btn">
+
+        <i class="ri-add-line"></i>
+
+        Add Funds
+
+    </a>
+
+</section>
+
+
+
+<!-- ==========================
+WALLET STATISTICS
+=========================== -->
+
+<section class="wallet-stats">
+
+    <div class="wallet-stat-card">
+
+        <div class="stat-icon deposit">
+
+            <i class="ri-arrow-up-line"></i>
+
+        </div>
+
+        <div>
+
+            <span>Total Deposits</span>
+
+            <h3>
+
+                ₦<span id="totalDeposits">
+
+                    0.00
+
+                </span>
+
+            </h3>
+
+        </div>
+
+    </div>
+
+    <div class="wallet-stat-card">
+
+        <div class="stat-icon spent">
+
+            <i class="ri-arrow-down-line"></i>
+
+        </div>
+
+        <div>
+
+            <span>Total Spent</span>
+
+            <h3>
+
+                ₦<span id="totalSpent">
+
+                    0.00
+
+                </span>
+
+            </h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================
+RECENT ACTIVITY
+=========================== -->
+
+<section class="recent-activity">
+
+    <div class="activity-header">
+
+        <div>
+
+            <h2>
+
+                Recent Activity
+
+            </h2>
+
+            <p>
+
+                Tap a transaction to view its order
+
+            </p>
+
+        </div>
+
+        <a href="transactions.html">
+
+            View All
+
+            <i class="ri-arrow-right-line"></i>
+
+        </a>
+
+    </div>
+
+    <div id="transactionsContainer">
+
+        <!-- Firebase transactions will load here -->
+
+    </div>
+
+</section>
+<!-- ==========================
+EMPTY TRANSACTION STATE
+=========================== -->
+
+<div class="empty-transactions" id="emptyTransactions">
+
+    <div class="empty-icon">
+
+        <i class="ri-history-line"></i>
+
+    </div>
+
+    <h2>
+
+        No transactions yet
+
+    </h2>
+
+    <p>
+
+        Fund your wallet to get started.
+
+    </p>
+
+    <a href="fund.html" class="empty-fund-btn">
+
+        <i class="ri-add-line"></i>
+
+        Add Funds
+
+    </a>
+
+</div>
+
+
+
+<!-- ==========================
+FLOATING TELEGRAM
+=========================== -->
+
+<a href="https://t.me/yourtelegramusername"
+
+   class="telegram-btn"
+
+   target="_blank">
+
+    <i class="ri-telegram-fill"></i>
+
+</a>
+
+
+
+<!-- ==========================
+BOTTOM NAVIGATION
+=========================== -->
+
+<nav class="bottom-nav">
+
+    <a href="dashboard.html">
+
+        <i class="ri-home-5-line"></i>
+
+        <span>Home</span>
+
+    </a>
+
+    <a href="wallet.html" class="active">
+
+        <i class="ri-wallet-3-line"></i>
+
+        <span>Wallet</span>
+
+    </a>
+
+    <a href="services.html">
+
+        <i class="ri-apps-2-line"></i>
+
+        <span>Services</span>
+
+    </a>
+
+    <a href="support.html">
+
+        <i class="ri-customer-service-2-line"></i>
+
+        <span>Support</span>
+
+    </a>
+
+    <button id="openMenu">
+
+        <i class="ri-menu-3-line"></i>
+
+        <span>Menu</span>
+
+    </button>
+
+</nav>
+
+
+
+<!-- ==========================
+SIDE MENU
+=========================== -->
+
+<div id="menuOverlay"></div>
+
+<aside id="sideMenu" class="side-menu">
+
+    <div class="side-header">
+
+        <h2>
+
+            Verifystacklogs
+
+        </h2>
+
+        <button id="closeMenu">
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+    <div class="side-links">
+
+        <a href="dashboard.html">
+
+            Dashboard
+
+        </a>
+
+        <a href="wallet.html">
+
+            Wallet
+
+        </a>
+
+        <a href="orders.html">
+
+            Orders
+
+        </a>
+
+        <a href="services.html">
+
+            Services
+
+        </a>
+
+        <a href="support.html">
+
+            Support
+
+        </a>
+
+        <a href="settings.html">
+
+            Settings
+
+        </a>
+
+        <a href="#" id="logoutBtn">
+
+            Logout
+
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ==========================
+SCRIPTS
+=========================== -->
+
+<script type="module" src="firebase.js"></script>
+
+<script type="module" src="wallet.js"></script>
+
+</div>
+
+</body>
+
+</html>
