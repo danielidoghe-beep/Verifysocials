@@ -1,127 +1,551 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard - VerifySocials</title>
 
-<link rel="stylesheet" href="dashboard.css">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Verifystacklogs</title>
+
+    <link rel="stylesheet"
+          href="dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+          rel="stylesheet">
+
 </head>
+
 <body>
 
-<!-- Sidebar Overlay -->
-<div class="overlay" id="overlay"></div>
+<div class="dashboard">
 
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
+<!-- =========================
+HEADER
+========================== -->
 
-    <div class="sidebar-header">
-        <h2>VerifySocials</h2>
-        <button id="closeMenu">✕</button>
-    </div>
-
-    <a href="dashboard.html">🏠 Dashboard</a>
-    <a href="wallet.html">💰 Wallet</a>
-    <a href="transactions.html">📄 Transactions</a>
-    <a href="orders.html">📦 Orders</a>
-    <a href="notifications.html">🔔 Notifications</a>
-    <a href="numbers.html">📱 Buy Numbers</a>
-    <a href="sms.html">💬 SMS Services</a>
-    <a href="boosting.html">🚀 Social Boosting</a>
-    <a href="tools.html">🛠 Tools Store</a>
-    <a href="vpn.html">🌐 VPN</a>
-    <a href="profile.html">👤 Profile</a>
-    <a href="#">📞 Support</a>
-    <a href="#" id="logoutBtn">🚪 Logout</a>
-
-</div>
-
-<!-- Top Bar -->
-<header class="topbar">
-
-    <button class="menu-btn" id="openMenu">
-        ☰
-    </button>
+<header class="dashboard-header">
 
     <div class="logo">
-        VerifySocials
+
+        <h2>Verifystacklogs</h2>
+
     </div>
 
-    <div class="top-icons">
-        <span>🔔</span>
-        <span>👤</span>
+    <div class="header-buttons">
+
+        <button id="notificationBtn">
+
+            <i class="ri-notification-3-line"></i>
+
+        </button>
+
+        <button id="menuBtn">
+
+            <i class="ri-menu-3-line"></i>
+
+        </button>
+
     </div>
 
 </header>
 
-<!-- Main Content -->
-<div class="container">
 
-    <div class="welcome-card">
-        <h1 id="welcomeText">Welcome Back 👋</h1>
-<p id="userGreeting">Loading...</p>
+
+<!-- =========================
+WELCOME
+========================== -->
+
+<section class="welcome">
+
+    <h3>
+
+        Welcome back,
+
+        <span id="username">
+
+            Loading...
+
+        </span>
+
+    </h3>
+
+    <p id="currentDate">
+
+        Loading Date...
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+WALLET CARD
+========================== -->
+
+<section class="wallet-card">
+
+    <div class="wallet-left">
+
+        <div class="wallet-icon">
+
+            <i class="ri-wallet-3-line"></i>
+
+        </div>
+
+        <div>
+
+            <small>Wallet Balance</small>
+
+            <h2>
+
+                ₦<span id="walletBalance">
+
+                    0.00
+
+                </span>
+
+            </h2>
+
+        </div>
+
+        <button id="toggleBalance">
+
+            <i class="ri-eye-line"></i>
+
+        </button>
+
     </div>
 
-    <div class="search-box">
-        <input type="text" placeholder="Search services, tools, VPN...">
+    <button id="addFundsBtn">
+
+        <i class="ri-add-line"></i>
+
+        Add Funds
+
+    </button>
+
+</section>
+
+
+
+<!-- =========================
+STATISTICS
+========================== -->
+
+<section class="stats-card">
+
+    <div class="stat-item">
+
+        <div class="stat-icon">
+
+            <i class="ri-money-dollar-circle-line"></i>
+
+        </div>
+
+        <div>
+
+            <small>Total Spent</small>
+
+            <h3>
+
+                ₦<span id="totalSpent">
+
+                    0.00
+
+                </span>
+
+            </h3>
+
+        </div>
+
     </div>
 
-    <div class="wallet-card">
-        <h3>Wallet Balance</h3>
-        <h2 id="walletBalance">Loading...</h2>
-        <button>Fund Wallet</button>
-    </div>
+    <div class="divider"></div>
 
-    <h2 class="section-title">Quick Actions</h2>
+    <div class="stat-item">
 
-    <div class="quick-actions">
+        <div class="stat-icon">
 
-        <div class="action-card">
-            📱
-            <p>Numbers</p>
+            <i class="ri-shopping-bag-3-line"></i>
+
         </div>
 
-        <div class="action-card">
-            💬
-            <p>SMS</p>
-        </div>
+        <div>
 
-        <div class="action-card">
-            🚀
-            <p>Boosting</p>
-        </div>
+            <small>Total Orders</small>
 
-        <div class="action-card">
-            🛠
-            <p>Tools</p>
-        </div>
+            <h3 id="totalOrders">
 
-        <div class="action-card">
-            🌐
-            <p>VPN</p>
+                0
+
+            </h3>
+
         </div>
 
     </div>
 
-    <div class="info-card">
-        <h3>Recent Orders</h3>
-        <div id="ordersContainer">
-    Loading...
+</section>
+<!-- =========================
+PROMOTION BANNER
+========================== -->
+
+<section class="promo-banner">
+
+    <div class="promo-content">
+
+        <div>
+
+            <h2>Rent Virtual Numbers</h2>
+
+            <p>
+
+                Get SMS verification codes instantly
+                with premium virtual numbers.
+
+            </p>
+
+        </div>
+
+        <button id="rentNowBtn">
+
+            Rent Now
+
+            <i class="ri-arrow-right-line"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+PURCHASE SUMMARY
+========================== -->
+
+<section class="purchase-card">
+
+    <div class="purchase-header">
+
+        <div class="purchase-title">
+
+            <i class="ri-group-line"></i>
+
+            <h2>Social Accounts</h2>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="purchase-body">
+
+        <h1 id="totalPurchased">
+
+            0
+
+        </h1>
+
+        <p>
+
+            Purchased
+
+        </p>
+
+    </div>
+
+
+
+    <div class="purchase-status">
+
+        <div class="status-box">
+
+            <span>
+
+                Pending
+
+            </span>
+
+            <strong id="pendingOrders">
+
+                0
+
+            </strong>
+
+        </div>
+
+
+
+        <div class="status-box">
+
+            <span>
+
+                Completed
+
+            </span>
+
+            <strong id="completedOrders">
+
+                0
+
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <button id="browseAccountsBtn">
+
+        Browse Accounts
+
+        <i class="ri-arrow-right-line"></i>
+
+    </button>
+
+</section>
+
+
+
+<!-- =========================
+SERVICES GRID
+========================== -->
+
+<section class="services-section">
+
+    <div class="section-title">
+
+        <h2>
+
+            Services
+
+        </h2>
+
+    </div>
+
+    <div id="servicesContainer">
+
+        <!-- Firebase will load service cards here -->
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+RECENT ACTIVITY
+========================== -->
+
+<section class="activity-section">
+
+    <div class="activity-card">
+
+        <div class="activity-icon">
+
+            <i class="ri-notification-3-line"></i>
+
+        </div>
+
+        <h2>
+
+            All caught up!
+
+        </h2>
+
+        <p>
+
+            No recent activity to show.
+
+        </p>
+
+        <div id="activityContainer">
+
+            <!-- Firebase activity will appear here -->
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+FLOATING TELEGRAM
+========================== -->
+
+<a href="https://t.me/yourusername"
+
+   target="_blank"
+
+   class="telegram-btn">
+
+    <i class="ri-telegram-fill"></i>
+
+</a>
+
+
+
+<!-- =========================
+BOTTOM NAVIGATION
+========================== -->
+
+<nav class="bottom-nav">
+
+    <a href="dashboard.html" class="active">
+
+        <i class="ri-home-5-line"></i>
+
+        <span>Home</span>
+
+    </a>
+
+    <a href="wallet.html">
+
+        <i class="ri-wallet-3-line"></i>
+
+        <span>Wallet</span>
+
+    </a>
+
+    <a href="services.html">
+
+        <i class="ri-apps-2-line"></i>
+
+        <span>Services</span>
+
+    </a>
+
+    <a href="support.html">
+
+        <i class="ri-customer-service-2-line"></i>
+
+        <span>Support</span>
+
+    </a>
+
+    <button id="openMenu">
+
+        <i class="ri-menu-3-line"></i>
+
+        <span>Menu</span>
+
+    </button>
+
+</nav>
+
+
+
+<!-- =========================
+SLIDE MENU
+========================== -->
+
+<div id="menuOverlay"></div>
+
+<aside class="side-menu" id="sideMenu">
+
+    <div class="side-header">
+
+        <h2>Verifystacklogs</h2>
+
+        <button id="closeMenu">
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+    <div class="side-links">
+
+        <a href="dashboard.html">
+
+            <i class="ri-home-5-line"></i>
+
+            Dashboard
+
+        </a>
+
+        <a href="wallet.html">
+
+            <i class="ri-wallet-3-line"></i>
+
+            Wallet
+
+        </a>
+
+        <a href="orders.html">
+
+            <i class="ri-shopping-bag-3-line"></i>
+
+            Orders
+
+        </a>
+
+        <a href="services.html">
+
+            <i class="ri-grid-line"></i>
+
+            Services
+
+        </a>
+
+        <a href="notifications.html">
+
+            <i class="ri-notification-3-line"></i>
+
+            Notifications
+
+        </a>
+
+        <a href="settings.html">
+
+            <i class="ri-settings-3-line"></i>
+
+            Settings
+
+        </a>
+
+        <a href="support.html">
+
+            <i class="ri-customer-service-2-line"></i>
+
+            Support
+
+        </a>
+
+        <a href="#" id="logoutBtn">
+
+            <i class="ri-logout-box-r-line"></i>
+
+            Logout
+
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================
+FIREBASE
+========================== -->
+
+<script type="module" src="firebase.js"></script>
+
+<script type="module" src="dashboard.js"></script>
+
 </div>
-    </div>
 
-    <div class="info-card">
-        <h3>Recent Notifications</h3>
-        <div id="notificationsContainer">
-    Loading...
-</div>
-    </div>
-
-</div>
-
-<script src="dashboard.js"></script>
-<script type="module" src="auth-check.js"></script>
-<script type="module" src="dashboard-user.js"></script>
-<script type="module" src="logout.js"></script>
 </body>
+
 </html>
