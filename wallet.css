@@ -1,0 +1,739 @@
+/*==============================
+GLOBAL
+==============================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:#f8fafc;
+    color:#111827;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+button{
+
+    border:none;
+    outline:none;
+    cursor:pointer;
+    font-family:inherit;
+
+}
+
+.wallet-page{
+
+    max-width:520px;
+    margin:auto;
+    min-height:100vh;
+    padding-bottom:100px;
+
+}
+
+/*==============================
+HEADER
+==============================*/
+
+.wallet-header{
+
+    height:80px;
+    background:#ffffff;
+    border-bottom:1px solid #e5e7eb;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+    position:sticky;
+    top:0;
+    z-index:100;
+
+}
+
+.logo{
+
+    font-size:30px;
+    font-weight:800;
+    color:#2563eb;
+
+}
+
+.header-actions{
+
+    display:flex;
+    gap:12px;
+
+}
+
+.header-actions button{
+
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:#f1f5f9;
+    color:#2563eb;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    transition:.3s;
+
+}
+
+.header-actions button:hover{
+
+    background:#2563eb;
+    color:#ffffff;
+
+}
+
+/*==============================
+PAGE TITLE
+==============================*/
+
+.wallet-title{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:25px 20px;
+
+}
+
+.wallet-icon{
+
+    width:82px;
+    height:82px;
+    border-radius:22px;
+    background:#eff6ff;
+    color:#2563eb;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+
+}
+
+.wallet-title h1{
+
+    font-size:36px;
+    font-weight:800;
+    margin-bottom:8px;
+
+}
+
+.wallet-title p{
+
+    color:#64748b;
+    font-size:16px;
+    line-height:28px;
+
+}
+
+/*==============================
+TABS
+==============================*/
+
+.wallet-tabs{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    margin:0 20px 25px;
+    background:#e2e8f0;
+    border-radius:22px;
+    padding:8px;
+
+}
+
+.wallet-tabs .tab{
+
+    height:58px;
+    border-radius:16px;
+    background:transparent;
+    color:#64748b;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.wallet-tabs .tab.active{
+
+    background:#2563eb;
+    color:#ffffff;
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
+
+}
+/*=========================================
+WALLET BALANCE CARD
+=========================================*/
+
+.wallet-balance-card{
+
+    margin:0 20px 22px;
+    background:#2563eb;
+    border-radius:28px;
+    padding:25px;
+    color:#ffffff;
+    box-shadow:0 15px 35px rgba(37,99,235,.20);
+
+}
+
+.wallet-top{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+
+}
+
+.wallet-info{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+}
+
+.wallet-info i{
+
+    width:55px;
+    height:55px;
+    border-radius:16px;
+    background:rgba(255,255,255,.18);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+
+}
+
+.wallet-info h3{
+
+    font-size:18px;
+    font-weight:600;
+
+}
+
+.wallet-info p{
+
+    margin-top:4px;
+    font-size:13px;
+    opacity:.85;
+
+}
+
+.wallet-actions{
+
+    display:flex;
+    gap:10px;
+
+}
+
+.wallet-actions button{
+
+    width:45px;
+    height:45px;
+    border-radius:14px;
+    background:rgba(255,255,255,.15);
+    color:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    transition:.3s;
+
+}
+
+.wallet-actions button:hover{
+
+    background:rgba(255,255,255,.25);
+
+}
+
+.wallet-balance{
+
+    font-size:42px;
+    font-weight:800;
+    margin-bottom:28px;
+    letter-spacing:1px;
+
+}
+
+.add-funds-btn{
+
+    width:100%;
+    height:56px;
+    border-radius:16px;
+    background:#ffffff;
+    color:#2563eb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    font-size:17px;
+    font-weight:700;
+    transition:.3s;
+
+}
+
+.add-funds-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/*=========================================
+WALLET STATISTICS
+=========================================*/
+
+.wallet-stats{
+
+    margin:0 20px 22px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+
+}
+
+.wallet-stat-card{
+
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:22px;
+    padding:20px;
+    transition:.3s;
+
+}
+
+.wallet-stat-card:hover{
+
+    transform:translateY(-4px);
+    box-shadow:0 15px 30px rgba(0,0,0,.06);
+
+}
+
+.stat-icon{
+
+    width:50px;
+    height:50px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:18px;
+    font-size:24px;
+
+}
+
+.deposit{
+
+    background:#ECFDF5;
+    color:#10B981;
+
+}
+
+.spent{
+
+    background:#FEF2F2;
+    color:#EF4444;
+
+}
+
+.wallet-stat-card span{
+
+    display:block;
+    color:#64748b;
+    font-size:14px;
+    margin-bottom:8px;
+
+}
+
+.wallet-stat-card h3{
+
+    font-size:24px;
+    color:#111827;
+    font-weight:700;
+
+}
+
+/*=========================================
+RECENT ACTIVITY
+=========================================*/
+
+.recent-activity{
+
+    margin:0 20px 25px;
+
+}
+
+.activity-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+
+}
+
+.activity-header h2{
+
+    font-size:22px;
+    margin-bottom:4px;
+
+}
+
+.activity-header p{
+
+    color:#64748b;
+    font-size:14px;
+
+}
+
+.activity-header a{
+
+    color:#2563eb;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-weight:600;
+
+}
+
+#transactionsContainer{
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+}
+
+.transaction-card{
+
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:20px;
+    padding:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:.3s;
+
+}
+
+.transaction-card:hover{
+
+    border-color:#2563eb;
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+}
+
+.transaction-left{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+}
+
+.transaction-icon{
+
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:#EFF6FF;
+    color:#2563EB;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+
+}
+
+.transaction-title{
+
+    font-size:16px;
+    font-weight:600;
+
+}
+
+.transaction-date{
+
+    font-size:13px;
+    color:#64748b;
+    margin-top:4px;
+
+}
+
+.transaction-amount{
+
+    font-size:17px;
+    font-weight:700;
+    color:#111827;
+
+}
+/*=========================================
+EMPTY TRANSACTIONS
+=========================================*/
+
+.empty-transactions{
+
+    margin:20px;
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:24px;
+    padding:45px 25px;
+    text-align:center;
+
+}
+
+.empty-icon{
+
+    width:80px;
+    height:80px;
+    margin:auto;
+    margin-bottom:20px;
+    border-radius:22px;
+    background:#EFF6FF;
+    color:#2563EB;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+
+}
+
+.empty-transactions h2{
+
+    font-size:26px;
+    margin-bottom:10px;
+
+}
+
+.empty-transactions p{
+
+    color:#64748b;
+    margin-bottom:25px;
+    line-height:26px;
+
+}
+
+.empty-fund-btn{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    width:100%;
+    height:56px;
+    background:#2563EB;
+    color:#ffffff;
+    border-radius:16px;
+    font-size:17px;
+    font-weight:600;
+
+}
+
+/*=========================================
+FLOATING TELEGRAM
+=========================================*/
+
+.telegram-btn{
+
+    position:fixed;
+    right:20px;
+    bottom:95px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#229ED9;
+    color:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+    transition:.3s;
+    z-index:999;
+
+}
+
+.telegram-btn:hover{
+
+    transform:scale(1.08);
+
+}
+
+/*=========================================
+BOTTOM NAVIGATION
+=========================================*/
+
+.bottom-nav{
+
+    position:fixed;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:0;
+    width:100%;
+    max-width:520px;
+    height:75px;
+    background:#ffffff;
+    border-top:1px solid #e5e7eb;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    z-index:1000;
+
+}
+
+.bottom-nav a,
+.bottom-nav button{
+
+    flex:1;
+    height:100%;
+    background:none;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:#64748b;
+
+}
+
+.bottom-nav i{
+
+    font-size:22px;
+
+}
+
+.bottom-nav span{
+
+    margin-top:4px;
+    font-size:12px;
+
+}
+
+.bottom-nav .active{
+
+    color:#2563EB;
+
+}
+
+/*=========================================
+SIDE MENU
+=========================================*/
+
+#menuOverlay{
+
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.35);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:998;
+
+}
+
+#menuOverlay.show{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+.side-menu{
+
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:320px;
+    max-width:90%;
+    height:100vh;
+    background:#ffffff;
+    transition:.35s;
+    z-index:999;
+
+}
+
+.side-menu.show{
+
+    right:0;
+
+}
+
+.side-header{
+
+    height:75px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+.side-links{
+
+    padding:20px;
+
+}
+
+.side-links a{
+
+    display:flex;
+    align-items:center;
+    height:52px;
+    padding:0 15px;
+    border-radius:14px;
+    color:#374151;
+    margin-bottom:8px;
+    transition:.3s;
+
+}
+
+.side-links a:hover{
+
+    background:#EFF6FF;
+    color:#2563EB;
+
+}
+
+/*=========================================
+RESPONSIVE
+=========================================*/
+
+@media(max-width:480px){
+
+    .wallet-title{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+    }
+
+    .wallet-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .wallet-balance{
+
+        font-size:34px;
+
+    }
+
+}
