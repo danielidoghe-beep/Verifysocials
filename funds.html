@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funds - VerifyStackLogs</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Header -->
+    <header class="topbar">
+
+        <h2 class="logo">
+            VerifyStackLogs
+        </h2>
+
+        <div class="top-icons">
+
+            <button class="icon-btn">
+                <i class="ri-notification-3-line"></i>
+            </button>
+
+            <button class="icon-btn">
+                <i class="ri-menu-line"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- Wallet Header -->
+
+    <section class="wallet-header">
+
+        <div class="wallet-icon">
+
+            <i class="ri-wallet-3-line"></i>
+
+        </div>
+
+        <div>
+
+            <h1>My Wallet</h1>
+
+            <p>
+                Manage your wallet securely with clean funding and transaction tracking.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Tabs -->
+
+    <div class="wallet-tabs">
+
+        <a href="wallet.html">Wallet</a>
+
+        <a href="funds.html" class="active">Funds</a>
+
+        <a href="history.html">History</a>
+
+    </div>
+
+    <!-- Divider -->
+
+    <div class="divider"></div>
+
+    <!-- Page Title -->
+
+    <section class="page-title">
+
+        <h2>Fund Your Wallet</h2>
+
+        <p>
+            Choose one of the payment methods below.
+        </p>
+
+    </section>
+    <!-- Main Bank Transfer Card -->
+
+<section class="fund-card">
+
+    <div class="fund-top">
+
+        <div class="fund-icon">
+            <i class="ri-bank-card-line"></i>
+        </div>
+
+        <div class="fund-info">
+            <h3>Bank Transfer</h3>
+            <p>Send payment to the account below.</p>
+        </div>
+
+        <span class="status-badge">Available</span>
+
+    </div>
+
+    <div class="fund-field">
+
+        <label>Bank Name</label>
+
+        <div class="field-box">
+
+            <span>PalmPay</span>
+
+        </div>
+
+    </div>
+
+    <div class="fund-field">
+
+        <label>Account Name</label>
+
+        <div class="field-box">
+
+            <span>Ogaga Blessing Idoghe</span>
+
+        </div>
+
+    </div>
+
+    <div class="fund-field">
+
+        <label>Account Number</label>
+
+        <div class="field-box copy-box">
+
+            <span id="accountNumber">
+                9117412352
+            </span>
+
+            <button id="copyAccount">
+
+                <i class="ri-file-copy-line"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="payment-notice">
+
+        <i class="ri-checkbox-circle-fill"></i>
+
+        <span>
+            After making payment, send your receipt to Admin on WhatsApp for confirmation.
+        </span>
+
+    </div>
+
+    <a
+        href="https://wa.me/2349117412352"
+        target="_blank"
+        class="receipt-btn">
+
+        <i class="ri-whatsapp-line"></i>
+
+        Send Receipt to WhatsApp
+
+    </a>
+
+</section>
+<!-- Coming Soon Payment Methods -->
+
+<section class="coming-soon-card">
+
+    <div class="coming-header">
+
+        <div class="coming-icon">
+            <i class="ri-bank-line"></i>
+        </div>
+
+        <div class="coming-text">
+
+            <h3>PalmPay Virtual Account</h3>
+
+            <p>Dedicated virtual account</p>
+
+        </div>
+
+        <span class="coming-badge">
+            Coming Soon
+        </span>
+
+    </div>
+
+    <div class="coming-body">
+
+        <p class="coming-message">
+
+            This payment method is currently unavailable.
+            It will be added in a future update.
+
+        </p>
+
+        <button class="coming-btn" disabled>
+
+            Coming Soon
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- Crypto Card -->
+
+<section class="coming-soon-card crypto-card">
+
+    <div class="coming-header">
+
+        <div class="coming-icon">
+
+            <i class="ri-bit-coin-line"></i>
+
+        </div>
+
+        <div class="coming-text">
+
+            <h3>Crypto Payment</h3>
+
+            <p>BTC, USDT and more</p>
+
+        </div>
+
+        <span class="coming-badge">
+
+            Coming Soon
+
+        </span>
+
+    </div>
+
+    <div class="coming-body">
+
+        <p class="coming-message">
+
+            Crypto funding is under development.
+            It will be available soon.
+
+        </p>
+
+        <button class="coming-btn" disabled>
+
+            Coming Soon
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- Deposit Guide -->
+
+<section class="guide-card">
+
+    <h3>How to Fund Your Wallet</h3>
+
+    <div class="guide-step">
+
+        <div class="step-number">1</div>
+
+        <p>Open your banking app.</p>
+
+    </div>
+
+    <div class="guide-step">
+
+        <div class="step-number">2</div>
+
+        <p>Transfer to the PalmPay account above.</p>
+
+    </div>
+
+    <div class="guide-step">
+
+        <div class="step-number">3</div>
+
+        <p>After payment, send your receipt to Admin on WhatsApp to confirm your payment.</p>
+
+    </div>
+
+</section>
+
+
+<div class="payment-footer">
+
+    <i class="ri-shield-check-line"></i>
+
+    <span>
+
+        Payments are confirmed after the admin verifies your receipt.
+
+    </span>
+
+</div>
+<!-- ==========================
+FLOATING WHATSAPP
+=========================== -->
+
+<a href="https://wa.me/2349117412352"
+
+   class="floating-whatsapp"
+
+   target="_blank">
+
+    <i class="ri-whatsapp-line"></i>
+
+</a>
+
+
+
+<!-- ==========================
+BOTTOM NAVIGATION
+=========================== -->
+
+<nav class="bottom-nav">
+
+    <a href="dashboard.html">
+
+        <i class="ri-home-5-line"></i>
+
+        <span>Home</span>
+
+    </a>
+
+    <a href="wallet.html" class="active">
+
+        <i class="ri-wallet-3-line"></i>
+
+        <span>Wallet</span>
+
+    </a>
+
+    <a href="services.html">
+
+        <i class="ri-apps-2-line"></i>
+
+        <span>Services</span>
+
+    </a>
+
+    <a href="support.html">
+
+        <i class="ri-customer-service-2-line"></i>
+
+        <span>Support</span>
+
+    </a>
+
+    <button id="openMenu">
+
+        <i class="ri-menu-3-line"></i>
+
+        <span>Menu</span>
+
+    </button>
+
+</nav>
+
+
+
+<!-- ==========================
+SIDE MENU
+=========================== -->
+
+<div id="menuOverlay"></div>
+
+<aside id="sideMenu" class="side-menu">
+
+    <div class="side-header">
+
+        <h2>
+
+            VerifyStackLogs
+
+        </h2>
+
+        <button id="closeMenu">
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+    <div class="side-links">
+
+        <a href="dashboard.html">
+
+            <i class="ri-home-5-line"></i>
+
+            Dashboard
+
+        </a>
+
+        <a href="wallet.html">
+
+            <i class="ri-wallet-3-line"></i>
+
+            Wallet
+
+        </a>
+
+        <a href="funds.html">
+
+            <i class="ri-bank-card-line"></i>
+
+            Funds
+
+        </a>
+
+        <a href="history.html">
+
+            <i class="ri-history-line"></i>
+
+            History
+
+        </a>
+
+        <a href="services.html">
+
+            <i class="ri-grid-line"></i>
+
+            Services
+
+        </a>
+
+        <a href="support.html">
+
+            <i class="ri-customer-service-2-line"></i>
+
+            Support
+
+        </a>
+
+        <a href="settings.html">
+
+            <i class="ri-settings-3-line"></i>
+
+            Settings
+
+        </a>
+
+        <a href="#" id="logoutBtn">
+
+            <i class="ri-logout-box-r-line"></i>
+
+            Logout
+
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ==========================
+SCRIPTS
+=========================== -->
+
+<script type="module" src="firebase.js"></script>
+
+<script type="module" src="funds.js"></script>
+
+</div>
+
+</body>
+
+</html>
