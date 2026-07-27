@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Transaction History</title>
+
+<link rel="stylesheet" href="../css/history.css">
+
+<link
+href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Header -->
+
+    <header class="topbar">
+
+        <h1 class="logo">DexPanelSuite</h1>
+
+        <div class="top-icons">
+
+            <button class="icon-btn">
+                <i class="ri-notification-3-line"></i>
+            </button>
+
+            <button class="icon-btn">
+                <i class="ri-menu-line"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- Wallet Header -->
+
+    <section class="wallet-header">
+
+        <div class="wallet-icon">
+            <i class="ri-wallet-3-line"></i>
+        </div>
+
+        <div>
+
+            <h2>My Wallet</h2>
+
+            <p>
+                Manage your wallet securely with clean funding
+                and transaction tracking.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Wallet Navigation -->
+
+    <div class="wallet-tabs">
+
+        <a href="wallet.html" class="tab">
+            Wallet
+        </a>
+
+        <a href="funds.html" class="tab">
+            Fund
+        </a>
+
+        <a href="history.html" class="tab active">
+            History
+        </a>
+
+    </div>
+
+    <hr class="divider">
+
+    <!-- Transaction Header -->
+
+    <section class="history-title">
+
+        <h2>Transaction History</h2>
+
+        <p>Tap a transaction to view its order details.</p>
+
+    </section>
+        <!-- Statistics -->
+
+    <section class="history-stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                <i class="ri-history-line"></i>
+            </div>
+
+            <div class="stat-info">
+                <span>Total Txns</span>
+                <h3 id="totalTransactions">0</h3>
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                <i class="ri-arrow-right-up-line"></i>
+            </div>
+
+            <div class="stat-info">
+                <span>Total Funded</span>
+                <h3 id="totalFunded">₦0.00</h3>
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon red">
+                <i class="ri-arrow-right-down-line"></i>
+            </div>
+
+            <div class="stat-info">
+                <span>Total Spent</span>
+                <h3 id="totalSpent">₦0.00</h3>
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon gray">
+                <i class="ri-money-naira-circle-line"></i>
+            </div>
+
+            <div class="stat-info">
+                <span>Balance</span>
+                <h3 id="walletBalance">₦0.00</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Search -->
+
+    <section class="search-box">
+
+        <i class="ri-search-line"></i>
+
+        <input
+            type="text"
+            id="searchHistory"
+            placeholder="Search transactions..."
+        >
+
+    </section>
+
+    <!-- Filters -->
+
+    <div class="history-filters">
+
+        <button class="filter-btn active" data-filter="all">
+            All
+        </button>
+
+        <button class="filter-btn" data-filter="credit">
+            ↑ Credits
+        </button>
+
+        <button class="filter-btn" data-filter="debit">
+            ↓ Debits
+        </button>
+
+    </div>
+    <!-- ==========================
+TRANSACTION LIST
+=========================== -->
+
+<section class="history-list">
+
+    <div id="historyContainer">
+
+        <!-- Transactions from Firebase will appear here -->
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================
+EMPTY STATE
+=========================== -->
+
+<div id="emptyHistory" class="empty-history">
+
+    <div class="empty-icon">
+
+        <i class="ri-history-line"></i>
+
+    </div>
+
+    <h2>
+
+        No transaction history yet
+
+    </h2>
+
+    <p>
+
+        Your wallet transactions will appear here after you fund your wallet or purchase a service.
+
+    </p>
+
+</div>
+
+
+
+<!-- ==========================
+FLOATING WHATSAPP
+=========================== -->
+
+<a
+    href="https://wa.me/2349117412352"
+    class="floating-whatsapp"
+    target="_blank">
+
+    <i class="ri-whatsapp-line"></i>
+
+</a>
+
+
+
+<!-- ==========================
+BOTTOM NAVIGATION
+=========================== -->
+
+<nav class="bottom-nav">
+
+    <a href="dashboard.html">
+
+        <i class="ri-home-5-line"></i>
+
+        <span>Home</span>
+
+    </a>
+
+    <a href="wallet.html" class="active">
+
+        <i class="ri-wallet-3-line"></i>
+
+        <span>Wallet</span>
+
+    </a>
+
+    <a href="services.html">
+
+        <i class="ri-apps-2-line"></i>
+
+        <span>Services</span>
+
+    </a>
+
+    <a href="support.html">
+
+        <i class="ri-customer-service-2-line"></i>
+
+        <span>Support</span>
+
+    </a>
+
+    <button id="openMenu">
+
+        <i class="ri-menu-3-line"></i>
+
+        <span>Menu</span>
+
+    </button>
+
+</nav>
+
+
+
+<!-- ==========================
+SIDE MENU
+=========================== -->
+
+<div id="menuOverlay"></div>
+
+<aside id="sideMenu" class="side-menu">
+
+    <div class="side-header">
+
+        <h2>
+
+            VerifyStackLogs
+
+        </h2>
+
+        <button id="closeMenu">
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+    <div class="side-links">
+
+        <a href="dashboard.html">
+
+            <i class="ri-home-5-line"></i>
+
+            Dashboard
+
+        </a>
+
+        <a href="wallet.html">
+
+            <i class="ri-wallet-3-line"></i>
+
+            Wallet
+
+        </a>
+
+        <a href="funds.html">
+
+            <i class="ri-bank-card-line"></i>
+
+            Funds
+
+        </a>
+
+        <a href="history.html">
+
+            <i class="ri-history-line"></i>
+
+            History
+
+        </a>
+
+        <a href="services.html">
+
+            <i class="ri-grid-line"></i>
+
+            Services
+
+        </a>
+
+        <a href="support.html">
+
+            <i class="ri-customer-service-2-line"></i>
+
+            Support
+
+        </a>
+
+        <a href="settings.html">
+
+            <i class="ri-settings-3-line"></i>
+
+            Settings
+
+        </a>
+
+        <a href="#" id="logoutBtn">
+
+            <i class="ri-logout-box-r-line"></i>
+
+            Logout
+
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ==========================
+SCRIPTS
+=========================== -->
+
+<script type="module" src="firebase.js"></script>
+
+<script type="module" src="history.js"></script>
+
+</div>
+
+</body>
+
+</html>
