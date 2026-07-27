@@ -636,3 +636,69 @@ RESPONSIVE
     }
 
 }
+/*====================================
+BOTTOM NAVIGATION
+====================================*/
+
+.bottom-nav{
+
+    position:fixed;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:0;
+    width:100%;
+    max-width:520px;
+    height:75px;
+    background:#ffffff;
+    border-top:1px solid #E5E7EB;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    z-index:1000;
+    box-shadow:0 -5px 20px rgba(0,0,0,.05);
+
+}
+
+.bottom-nav a,
+.bottom-nav button{
+
+    flex:1;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:none;
+    border:none;
+    color:#64748B;
+    transition:.3s;
+
+}
+
+.bottom-nav i{
+
+    font-size:22px;
+    margin-bottom:4px;
+
+}
+
+.bottom-nav span{
+
+    font-size:12px;
+    font-weight:600;
+
+}
+
+.bottom-nav a.active,
+.bottom-nav button.active{
+
+    color:#2563EB;
+
+}
+
+.bottom-nav a:hover,
+.bottom-nav button:hover{
+
+    color:#2563EB;
+
+}
